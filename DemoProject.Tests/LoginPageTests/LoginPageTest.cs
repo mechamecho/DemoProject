@@ -9,7 +9,7 @@ using OpenQA.Selenium.Chrome;
 namespace DemoProject.Tests.LoginPageTests
 {
     [TestFixture]
-    class LoginPageTest
+    internal class LoginPageTest
     {
         //Declaring LoginPageObject in the global scope
         private LoginPageObject _loginPage;
@@ -17,11 +17,12 @@ namespace DemoProject.Tests.LoginPageTests
         [SetUp]
         public void Initialize()
         {
-            //Initializing the LoginPageObject instance
-            _loginPage=new LoginPageObject();
-            
             //Initializing a new chrome driver
-            DriverClass.Driver=new ChromeDriver();
+            DriverClass.Driver = new ChromeDriver();
+
+            //Initializing the LoginPageObject instance
+            _loginPage =new LoginPageObject();
+
             //Maximizing the browsers screensize to fullscreen
             DriverClass.Driver.Manage().Window.Maximize();
             //Navigating to the login page
