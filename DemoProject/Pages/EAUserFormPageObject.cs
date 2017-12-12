@@ -56,58 +56,58 @@ namespace DemoProject.Pages
             }
         }
 
-        //To click the Gender RadioButton
-        public void ClickGender(string gender)
-        {
-            switch (gender.ToLower())
-            {
-                case ("male"):
-                    MaleRadioButton.ClickElement();
-                    break;
+        ////To click the Gender RadioButton
+        //public void ClickGender(string gender)
+        //{
+        //    switch (gender.ToLower())
+        //    {
+        //        case ("male"):
+        //            MaleRadioButton.ClickElement();
+        //            break;
 
-                case ("female"):
-                    FemaleRadioButton.ClickElement();
-                    break;
-            }
-        }
+        //        case ("female"):
+        //            FemaleRadioButton.ClickElement();
+        //            break;
+        //    }
+        //}
 
-        //To click the Languages checkboxes
-        public void ClickLanguage(string[] languages)
-        {
-            //To uncheck the default English checkbox
-            if (!languages[0].ToLower().Equals("english"))
-            {
-                EnglishCheckbox.ClickElement();
-            }
-            if (languages[1].ToLower().Equals("hindi"))
-            {
+        ////To click the Languages checkboxes
+        //public void ClickLanguage(string[] languages)
+        //{
+        //    //To uncheck the default English checkbox
+        //    if (!languages[0].ToLower().Equals("english"))
+        //    {
+        //        EnglishCheckbox.ClickElement();
+        //    }
+        //    if (languages[1].ToLower().Equals("hindi"))
+        //    {
 
-                HindiCheckbox.ClickElement();
-            }
+        //        HindiCheckbox.ClickElement();
+        //    }
 
-        }
+        //}
 
         public void FillUserForm(string title, string initial, string firstName, string middleName, string gender, string[] languages)
         {
             //The extended methods works directly on the IWebElement
             SelectTitle(title);
             InitialTextField.EnterTextInTextField(initial);
-            FirstnameTextField.CapitalizeInput(firstName);
-            MiddlenameTextField.CapitalizeInput(middleName);
-            ClickGender(gender);
-            ClickLanguage(languages);
+            //FirstnameTextField.CapitalizeInput(firstName);
+            //MiddlenameTextField.CapitalizeInput(middleName);
+            //ClickGender(gender);
+            //ClickLanguage(languages);
         }
 
         public void FillAndSubmitUserForm(string title, string initial, string firstName, string middleName, string gender, string[] languages)
         {
             FillUserForm(title, initial, firstName, middleName, gender, languages);
-            SubmitForm();
+            //SubmitForm();
         }
 
-        public void SubmitForm()
-        {
-            SaveButton.ClickElement();
+        //public void SubmitForm()
+        //{
+        //    SaveButton.ClickElement();
 
-        }
+        //}
     }
 }

@@ -1,7 +1,7 @@
 ﻿using OpenQA.Selenium;
 using OpenQA.Selenium.Support.UI;
 
-namespace DemoProject
+namespace DemoProject.CustomMethodsAndProperties
 {
     public static class SeleniumGetMethods
     {
