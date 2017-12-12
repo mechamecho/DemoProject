@@ -22,9 +22,10 @@ namespace DemoProject.Tests.LoginPageTests
 
             //Initializing the LoginPageObject instance
             _loginPage =new LoginPageObject();
-
+            Console.WriteLine("Opening Browser and Maximizing screen");
             //Maximizing the browsers screensize to fullscreen
             DriverClass.Driver.Manage().Window.Maximize();
+            Console.WriteLine(@"Naviagting to 'http://executeautomation.com/demosite/Login.html'");
             //Navigating to the login page
             DriverClass.Driver.Navigate().GoToUrl("http://executeautomation.com/demosite/Login.html");
         }
@@ -33,7 +34,8 @@ namespace DemoProject.Tests.LoginPageTests
 
         public void FillLoginForm_Username_UsernameTextIsCorrect(string username, string password)
         {
-            Console.WriteLine("Filling out the login form");
+            //string interpolation
+            Console.WriteLine($"Filling out the login form with {username} and {password}");
             _loginPage.FillLoginForm(username, password);
             var expectedUsername = username.Length <= 10 ? username : username.Substring(0, 10);
 
@@ -44,7 +46,7 @@ namespace DemoProject.Tests.LoginPageTests
         [TestCaseSource(typeof(UsernameAndPasswordSource))]
         public void FillLoginForm_Password_PasswordTextIsCorrect(string username, string password)
         {
-            Console.WriteLine("Filling out the login form");
+            Console.WriteLine($"Filling out the login form with {username} and {password}");
             _loginPage.FillLoginForm(username, password);
             var expectedPassword = password.Length <= 10 ? password : password.Substring(0, 10);
 
@@ -64,10 +66,9 @@ namespace DemoProject.Tests.LoginPageTests
         //Closes the browser
         public void CleanUp()
         {
+            Console.WriteLine("Closing the Browser");
             //To close the browser after typing the value
-            DriverClass.Driver.Close();
-
-            Console.WriteLine("Closed the Browser");
+            DriverClass.Driver.Close(); 
         }
     }
 }
