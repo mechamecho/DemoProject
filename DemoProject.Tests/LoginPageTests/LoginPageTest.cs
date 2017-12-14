@@ -5,6 +5,7 @@ using NUnit.Framework;
 using DemoProject.Pages;
 using OpenQA.Selenium.Chrome;
 
+//CareerDevs QA
 //comment 
 //Caitlyn pentakill
 namespace DemoProject.Tests.LoginPageTests
@@ -50,6 +51,17 @@ namespace DemoProject.Tests.LoginPageTests
             Console.WriteLine($"Filling out the login form with {username} and {password}");
             _loginPage.FillLoginForm(username, password);
             var expectedPassword = password.Length <= 10 ? password : password.Substring(0, 10);
+
+              //var expectedPassword;
+              //if(password.Length<10)
+              //{
+              //      expectedPassword=password;
+              //  }
+              //  else
+              //  {
+              //     expectedPassword=password.Substring(0,10);
+              //  }
+
 
             Assert.That(_loginPage.PasswordTextField.GetTextEnteredInTextField(), Is.EqualTo(expectedPassword));
         }
